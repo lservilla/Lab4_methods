@@ -155,7 +155,14 @@ public class MethodPractice {
     // The method should take a single int argument and return an int
     //
     // Don't forget to use the public static modifiers
-
+public static int doubleOddIgnoreEven(int n){
+        if(n%2==0){
+            return n;
+        }
+        else {
+            return n*2;
+        }
+}
 
 
     // WRITE A METHOD FROM SCRATCH
@@ -172,7 +179,14 @@ public class MethodPractice {
     // If either number is invalid, return -1;
     //
     // Don't forget to use the public static modifiers
-
+public static double calculateTotalPayment(int cost,double tipPercent){
+        if(cost<=0 || tipPercent<0 || tipPercent>0.6){
+            return -1;
+        }
+        double tip=cost*tipPercent;
+        double totalPayed=cost+tip;
+        return totalPayed;
+}
 
 
 
@@ -210,16 +224,16 @@ public class MethodPractice {
         if( averagePositives( 100,-3,4021,-2,13 ) == 1378 ) { numCorrect++; }
 
         // Uncomment these tests AFTER IMPLEMENTING doubleOddIgnoreEven
-        // if( doubleOddIgnoreEven( 4 ) == 4 ) { numCorrect++; }
-        // if( doubleOddIgnoreEven( 0 ) == 0 ) { numCorrect++; }
-        // if( doubleOddIgnoreEven( 3 ) == 6 ) { numCorrect++; }
+        if( doubleOddIgnoreEven( 4 ) == 4 ) { numCorrect++; }
+        if( doubleOddIgnoreEven( 0 ) == 0 ) { numCorrect++; }
+        if( doubleOddIgnoreEven( 3 ) == 6 ) { numCorrect++; }
 
         // Uncomment these tests AFTER IMPLEMENTING calculateTotalPayment
-        // if( calculateTotalPayment( 0, .3 ) == -1 ) { numCorrect++; }
-        // if( calculateTotalPayment( 10, .2 ) == 12.0 ) { numCorrect++; }
-        // if( calculateTotalPayment( 100, .5 ) == 150 ) { numCorrect++; }
-        // if( calculateTotalPayment( 100, .65 ) == -1 ) { numCorrect++; }
-        // if( calculateTotalPayment( 120, .32 ) == 158.4 ) { numCorrect++; }
+        if( calculateTotalPayment( 0, .3 ) == -1 ) { numCorrect++; }
+        if( calculateTotalPayment( 10, .2 ) == 12.0 ) { numCorrect++; }
+        if( calculateTotalPayment( 100, .5 ) == 150 ) { numCorrect++; }
+        if( calculateTotalPayment( 100, .65 ) == -1 ) { numCorrect++; }
+        if( calculateTotalPayment( 120, .32 ) == 158.4 ) { numCorrect++; }
 
         System.out.println( "Your program's completeness is currently: " + numCorrect + "/30" );
     }
