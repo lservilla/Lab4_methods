@@ -89,10 +89,19 @@ public class MethodPractice {
      * @return Corresponding output string.
      */
     public static String respond( String input ) {
-        // REPLACE THE METHOD BODY
-
-        // Have to return something here to make the file compile
-        return "this string is junk";
+        if(input=="Apple"){
+            return "Orange";
+        }
+        if (input=="Hello"){
+            return "Goodbye!";
+        }
+        if(input=="Turing"){
+            return "Machine";
+        }
+        if(input=="Yay!"){
+            return "\\o/";
+        }
+        return "What should I say?";
     }
 
     /**
