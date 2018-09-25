@@ -15,11 +15,8 @@ public class MethodPractice {
      * @return Product of x, y and z
      */
     public static int multThree( int x, int y, int z) {
-        // REPLACE THE METHOD BODY
-
-        // This is an obviously wrong return value
-        // that exists only to allow the file to compile
-        return -1000;
+        int i=x*y*z;
+        return i;
     }
 
     /**
@@ -27,12 +24,12 @@ public class MethodPractice {
      * @param x Value to check.
      * @return True if x is a positive number, false otherwise.
      */
-    public static boolean isPositive( int x ) {
-        // REPLACE THE METHOD BODY
-
-        // Hardcoded value will be "correct" sometimes,
-        // but you must make it work for all input
-        return true;
+    public static boolean isPositive( double x ) {
+        if (x > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -42,10 +39,17 @@ public class MethodPractice {
      * @return True if x contains G, false otherwise.
      */
     public static boolean hasG( String x ) {
-        // REPLACE THE METHOD BODY
-
-        // Again, hardcoding a value to compile
-        return false;
+        int hasLetterG = x.indexOf('G');
+        int hasLetterg = x.indexOf('g');
+        //System.out.println(hasLetterG);
+        //System.out.println(hasLetterg);
+        if (hasLetterG >= 0 || hasLetterg >= 0) {
+            //System.out.println("t");
+            return true;
+        } else {
+            //System.out.println("f");
+            return false;
+        }
     }
 
     /**
@@ -56,11 +60,21 @@ public class MethodPractice {
      *         -1 if G is not present.
      */
     public static int indexOfG( String x ) {
-        // REPLACE THE METHOD BODY
-
-        // This is an obviously wrong return value
-        // that exists only to allow the file to compile
-        return -1234;
+        int Letg = x.indexOf('g');
+        int LetG = x.indexOf('G');
+        if (Letg >= 0 && LetG >= 0) {
+            if (Letg <= LetG ) {
+                return Letg;
+            }
+            else {
+                return LetG;
+            }
+        } else if(LetG==-1 && Letg>=0){
+            return Letg;
+        }else if(Letg==-1 && LetG>=0){
+            return LetG;
+        }
+        return -1;
     }
 
     /**
@@ -92,11 +106,35 @@ public class MethodPractice {
      * @return Average of the positive input values. If none are positive, returns -1.
      */
     public static double averagePositives( int a, int b, int c, int d, int e ) {
-        // REPLACE THE METHOD BODY
-
-        // This is an obviously wrong return value
-        // that exists only to allow the file to compile
-        return -4.2;
+      if(a<=0&&b<=0&&c<=0&&d<=0&&e<=0){
+          return -1;
+      }
+       if(!isPositive(a)){
+           a=0;
+       }
+       if(!isPositive(b)){
+           b=0;
+       }
+       if(!isPositive(c)){
+           c=0;
+       }
+       if(!isPositive(d)){
+           d=0;
+       }
+       if(!isPositive(e)){
+           e=0;
+       }
+       double allValues[];
+       allValues = new double[]{a,b,c,d,e};
+       int count=0;
+        for (int i = 0; i < allValues.length; i++) {
+            if(allValues[i]==0){
+                count++;
+            }
+        }
+        double sum=a+b+c+d+e;
+        double average=sum/(allValues.length-count);
+        return average;
     }
 
 
